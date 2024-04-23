@@ -6,6 +6,7 @@ public class Main {
         byte selected;
         do {
             System.out.print("""
+                    
                     **************************************************
                     ¡Hola, bienvenida/o al Conversor de Moneda!
                     
@@ -29,9 +30,9 @@ public class Main {
             } else if (selected < 1 || selected > 7){
                 System.out.println("¡Atención! '" + selected + "' NO es una opción válida.  Por favor intente de nuevo");
             } else {
-                System.out.print("Ingrese el valor que desea convertir: ");
-                final double value = sc.nextDouble();
-                ExchangeRate.converter(selected, value);
+                System.out.print("Ingrese la cantidad que desea convertir: ");
+                final double amount = sc.nextDouble();
+                ExchangeRate.converter(selected, amount);
             }
         }while (selected != 7);
     }
