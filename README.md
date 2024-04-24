@@ -2,6 +2,9 @@
 ---
 This project is based on "Conversor de Moneda" challenge proposed by ONE-G6  
 How does it look? Take a look at [Demo](https://youtu.be/-TJ4sduDhZY)
+
+![badge conversor](./badge-conversor.png)
+
 ## Stack
 - Java
 ### Third-Party API
