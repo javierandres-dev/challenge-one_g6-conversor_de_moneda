@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -22,18 +23,24 @@ public class Main {
                     """);
             System.out.print("Elija una opción válida: ");
             selected = sc.nextByte();
-            if (selected == 7){
+            if (selected == 7) {
                 System.out.println("""
                         Usted ha seleccionado salir
                         Adiós, gracias por utilizar el Conversor de Moneda.
                         """);
-            } else if (selected < 1 || selected > 7){
+            } else if (selected < 1 || selected > 7) {
                 System.out.println("¡Atención! '" + selected + "' NO es una opción válida.  Por favor intente de nuevo");
             } else {
                 System.out.print("Ingrese la cantidad que desea convertir: ");
                 final double amount = sc.nextDouble();
-                ExchangeRate.converter(selected, amount);
+                try {
+                    ExchangeRate.converter(selected, amount);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
-        }while (selected != 7);
+        } while (selected != 7);
     }
 }
